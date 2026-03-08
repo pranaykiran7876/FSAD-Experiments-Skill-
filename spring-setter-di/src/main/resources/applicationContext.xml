@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Course Bean -->
+    <bean id="course" class="com.klu.Course">
+        <property name="courseName" value="Spring Framework"/>
+        <property name="duration" value="6"/>
+    </bean>
+
+    <!-- Student Bean -->
+    <bean id="student" class="com.klu.Student">
+
+        <!-- Primitive + Wrapper + String -->
+        <property name="id" value="101"/>
+        <property name="name" value="Rama"/>
+        <property name="fee" value="25000"/>
+        <property name="active" value="true"/>
+        <property name="age" value="22"/>
+        <property name="marks" value="89.5"/>
+
+        <!-- Array -->
+        <property name="skills">
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>Hibernate</value>
+            </list>
+        </property>
+
+        <!-- List -->
+        <property name="subjects">
+            <list>
+                <value>Maths</value>
+                <value>Physics</value>
+                <value>Computer Science</value>
+            </list>
+        </property>
+
+        <!-- Set -->
+        <property name="hobbies">
+            <set>
+                <value>Reading</value>
+                <value>Coding</value>
+                <value>Music</value>
+            </set>
+        </property>
+
+        <!-- Map -->
+        <property name="semesterMarks">
+            <map>
+                <entry key="Sem1" value="85"/>
+                <entry key="Sem2" value="88"/>
+                <entry key="Sem3" value="90"/>
+            </map>
+        </property>
+
+        <!-- Non-Primitive -->
+        <property name="course" ref="course"/>
+
+    </bean>
+
+</beans>
